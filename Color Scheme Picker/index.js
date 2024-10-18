@@ -1,20 +1,11 @@
 const form = document.getElementById('form');
 
-let schemeArray = [];
-
 // Load Color Scheme
 document.addEventListener('DOMContentLoaded', () => {
   const url =
     'https://www.thecolorapi.com/scheme?hex=F55A5A&mode=monochrome&count=5';
 
-  fetch(url, { method: 'GET' })
-    .then((res) => res.json())
-    .then((scheme) => {
-      scheme.colors.forEach((color) => {
-        schemeArray.push(color.hex.value);
-      });
-      renderColors(schemeArray);
-    });
+  fetchUrl(url)  
 });
 
 // Selected Color Scheme
@@ -27,18 +18,22 @@ form.addEventListener('submit', (e) => {
   // Insert both input values to the url
   const url = `https://www.thecolorapi.com/scheme?hex=${colorInput.value.slice(1)}&mode=${colorScheme.value}&count=5`;
 
-  // Ensure you empty the array for 5 "new" incoming colors
-  let schemeArray = [];
+  fetchUrl(url)
+});
+
+function fetchUrl(url) {
+  // Ensure the schemeArray is empty before "pushing" 5 new colors
+  let schemeArray = []
 
   fetch(url, { method: 'GET' })
-    .then((res) => res.json())
-    .then((scheme) => {
-      scheme.colors.forEach((color) => {
-        schemeArray.push(color.hex.value);
-      });
-      renderColors(schemeArray);
+  .then((res) => res.json())
+  .then((scheme) => {
+    scheme.colors.forEach((color) => {
+      schemeArray.push(color.hex.value);
     });
-});
+    renderColors(schemeArray);
+  });  
+}
 
 // Render Color Scheme
 function renderColors(array) {
@@ -51,7 +46,6 @@ function renderColors(array) {
                 <p class="hex-code">${color}</p>
             </div>
         `;
-  });
-  // Load all elements to the page
+  });  
   document.getElementById('scheme-grid').innerHTML = colorHtml;
 }
