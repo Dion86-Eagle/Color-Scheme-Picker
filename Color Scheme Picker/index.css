@@ -110,6 +110,11 @@ input:focus,
     grid-template-rows: 90% 10%;
 }
 
+.scheme-container:hover {
+    cursor: pointer;
+    transform: scale(1.010);
+}
+
 .hex-code {    
     width: 100%;
     height: 100%;
