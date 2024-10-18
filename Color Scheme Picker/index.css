@@ -1,0 +1,111 @@
+/* Permanent Marker Font */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-family: 'Permanent Marker', sans-serif;
+}
+
+main {   
+    width: 550px;
+    height: 550px;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgb(0, 0, 0, 0.5);    
+}
+
+.navbar {    
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em 0.875em;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    column-gap: 1em;
+}
+
+input,
+select,
+.btn {
+    border-radius: 5px;
+    border: 1px solid #D1D5DB;
+}
+
+input,
+.btn {
+    font-family: inherit;
+}
+
+input {
+    width: 100%;
+    height: 100%;    
+}
+
+input:hover,
+.btn:hover,
+select:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2px;
+}
+
+.btn {
+    font-size: 0.75rem;
+    background-color: transparent;    
+}
+
+.btn:hover {    
+    opacity: 0.8;    
+}
+
+input:focus,
+.btn:focus {
+    outline: none;
+}
+
+.scheme-grid {
+    width: 100%;
+    height: calc(100% - (90px));
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.scheme-container {    
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+
+.hex-code {    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+}
