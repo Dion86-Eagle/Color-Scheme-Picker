@@ -23,23 +23,58 @@ body {
     background-image: url(https://wallpapers.com/images/featured/colorful-tlzydzdb2ogq2b70.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;    
+    background-position: center;
+    box-shadow: inset 0 0 200px #000, inset 0 0 150px #000, inset 0 0 100px #000, inset 0 0 50px #000;    
+}
+
+body::after {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.2;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3.5rem;       
+    margin-bottom: 0.5em;    
+}
+
+h2 {
+    font-size: 1.5rem;    
+}
+
+h1,
+h2 {
     font-family: 'Permanent Marker', sans-serif;
     letter-spacing: 0.2rem;    
-    margin-bottom: 0.85em;
     color: #fefefe;
     text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+h1,
+h2,
+main,
+a {
+    z-index: 1;
 }
 
 main {   
     width: 550px;    
     height: 550px;    
     border-radius: 5px;
-    box-shadow: 0 0 150px rgb(255, 255, 255), 0 0 100px rgb(255, 255, 255), 0 0 50px rgb(255, 255, 255);       
+    margin-bottom: 8em;    
 }
 
 .navbar {    
@@ -102,7 +137,7 @@ input:focus,
     width: 100%;
     height: calc(100% - (90px));
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);    
 }
 
 .scheme-container {    

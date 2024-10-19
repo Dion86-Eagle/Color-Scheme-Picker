@@ -21,11 +21,11 @@ form.addEventListener('submit', (e) => {
   fetchUrl(url)
 });
 
-function fetchUrl(url) {
+function fetchUrl(colorAPI) {
   // Ensure the schemeArray is empty before "pushing" 5 new colors
   let schemeArray = []
 
-  fetch(url, { method: 'GET' })
+  fetch(colorAPI, { method: 'GET' })
   .then((res) => res.json())
   .then((scheme) => {
     scheme.colors.forEach((color) => {
@@ -36,14 +36,14 @@ function fetchUrl(url) {
 }
 
 // Render Color Scheme
-function renderColors(array) {
+function renderColors(colorsArray) {
   let colorHtml = ``;
 
-  array.forEach((color) => {
+  colorsArray.forEach((color) => {
     colorHtml += `
             <div class="scheme-container">
                 <div class="color" style="background-color: ${color}"></div>
-                <p class="hex-code">${color}</p>
+                <p id="hex-color" class="hex-code">${color}</p>
             </div>
         `;
   });  
